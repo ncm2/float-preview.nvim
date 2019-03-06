@@ -2,6 +2,9 @@
 
 - Completion preview window based on neovim's [floating window](https://github.com/neovim/neovim/pull/6619)
 
+Note that this is a general purpose plugin instead of ncm2 only, it applies to
+`:help complete-items` with `info` field available.
+
 ## Why ？
 
 Vim's builtin completion preview window is annoying. When the preview window
