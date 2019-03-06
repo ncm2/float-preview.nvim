@@ -2,17 +2,19 @@
 
 - Completion preview window based on neovim's [floating window](https://github.com/neovim/neovim/pull/6619)
 
+[![asciicast](https://asciinema.org/a/232057.svg)](https://asciinema.org/a/232057)
+
 Note that this is a general purpose plugin instead of ncm2 only, it applies to
 `:help complete-items` with `info` field available.
 
 ## Why ？
 
-Vim's builtin completion preview window is annoying. When the preview window
-gets opened, it simply pumps the text out of my eye spot. Which makes it very
+Vim's builtin `set completeopt+=preview` is annoying. When the preview window
+is opened, it simply pumps text out of my eye spot. Which makes it very
 disturbing and actually unusable.
 
-This plugin uses neovim's floating Window, it never pumps the text out of your
-eye spot.
+This plugin uses neovim's floating Window, it should never pumps text out of
+your eye spot.
 
 ## Config && API
 
