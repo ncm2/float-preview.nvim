@@ -33,7 +33,7 @@ func! s:check()
     let info = get(v:completed_item, 'info', '')
     if empty(info)
         " echom 'empty info'
-        call s:auto_close()
+        call float_preview#close()
         return
     endif
 
@@ -54,7 +54,7 @@ func! s:check()
     if up_avail <= 0 && down_avail <= 0
         " no enough space to displace the preview window
         " echom 'no space avilable'
-        call s:auto_close()
+        call float_preview#close()
         return
     endif
 
