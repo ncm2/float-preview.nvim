@@ -2,7 +2,13 @@
 
 - Completion preview window based on neovim's [floating window](https://github.com/neovim/neovim/pull/6619)
 
+With `let g:float_preview#docked = 1`:
+
 [![asciicast](https://asciinema.org/a/232057.svg)](https://asciinema.org/a/232057)
+
+With `let g:float_preview#docked = 0`:
+
+[![asciicast](https://asciinema.org/a/234259.svg)](https://asciinema.org/a/234259)
 
 Note that this is a general purpose plugin instead of ncm2 only, it applies to
 `:help complete-items` with `info` field available.
@@ -18,18 +24,30 @@ your eye spot.
 
 ## Config && API
 
+### `g:float_preview#docked`
+
+If set to 0, the preview window will be displayed beside the popup menu.
+Defaults to `1`.
+
 ### `g:float_preview#winhl`
 
 Custom highlights for preview window. See `:help 'winhl'` for more
 information.
 
-### `g:float_preview#height`
+### `g:float_preview#max_height`
 
 Height of the preview window. Defaults to `:help 'previewheight'`.
 
+### `g:float_preview#max_width`
+
+Only used when `g:float_preview#docked == 0`. Max width of the preview window.
+Defaults to `50`.
+
 ### `g:float_preview#auto_close`
 
-Defaults to 1. If you don't want this plugin auto closing the preview window,
+Defaults to 1. Only used when `g:float_preview#docked == 1`.
+
+If you don't want this plugin auto closing the preview window,
 use `:let g:float_preview#auto_close = 0` and `call float_preview#close()` by
 yourself.
 
