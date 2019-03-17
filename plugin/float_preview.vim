@@ -70,9 +70,11 @@ func! s:check()
                 \ 'focusable': v:false,
                 \ 'row': prevw_row,
                 \ 'col': 2,
+                \ 'width': winwidth,
+                \ 'height': prevw_height
                 \}
 
-    let winargs = [s:buf, 0, winwidth, prevw_height, opt]
+    let winargs = [s:buf, 0, opt]
 
     if !s:win || s:last_winargs != winargs
         " close the old one if already opened
