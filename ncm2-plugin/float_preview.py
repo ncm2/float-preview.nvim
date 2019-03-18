@@ -7,6 +7,9 @@ def wrap():
     from ncm2 import getLogger
     import vim
 
+    if vim.vars['float_preview#docked']:
+        return
+
     old_matches_decorate = ncm2_core.matches_decorate
 
     def new_matches_decorate(*args):

@@ -3,14 +3,6 @@ if get(s:, 'loaded')
 endif
 let s:loaded = 1
 
-let g:float_preview#winhl = get(g:, 'float_preview#winhl', 'Normal:Pmenu,NormalNC:Pmenu')
-let g:float_preview#max_height = get(g:, 'float_preview#max_height', 0)
-let g:float_preview#auto_close = get(g:, 'float_preview#auto_close', 1)
-let g:float_preview#docked = get(g:, 'float_preview#docked', 1)
-
-" only used for g:float_preview#docked == 0
-let g:float_preview#max_width = get(g:, 'float_preview#max_width', 50)
-
 " TODO
 " let g:float_preview#min_width = get(g:, 'float_preview#max_width', 30)
 
