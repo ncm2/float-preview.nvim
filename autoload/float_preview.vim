@@ -20,8 +20,6 @@ let g:float_preview#max_width = get(g:, 'float_preview#max_width', 50)
 " TODO
 " allow customized completion item resolve
 
-" TODO ncm2-plugin/float_preview.py to remove ncm2 completion menu field
-
 let s:timer = 0
 let s:win = 0
 let s:event = {}
