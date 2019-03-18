@@ -14,8 +14,9 @@ def wrap():
         for m in matches:
             menu = m['menu']
             m['menu'] = ''
-            if menu:
-                m['info'] = menu + "\n\n" + m['info'].strip()
+            info = m['info'].strip()
+            if menu != info[:len(menu)]:
+                m['info'] = menu + "\n\n" + info
         return old_matches_decorate(*args)
 
     ncm2_core.matches_decorate = new_matches_decorate
