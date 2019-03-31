@@ -11,7 +11,7 @@ let g:float_preview#docked = get(g:, 'float_preview#docked', 1)
 " only used for g:float_preview#docked == 0
 let g:float_preview#max_width = get(g:, 'float_preview#max_width', 50)
 
-au MenuPopupChanged * call float_preview#_menu_popup_changed()
+au CompleteChanged * call float_preview#_menu_popup_changed()
 au CompleteDone * call float_preview#_complete_done()
 
 au InsertLeave * call float_preview#_insert_leave()

@@ -39,7 +39,7 @@ endfunc
 
 func! float_preview#start_check()
     " use timer_start since nvim_buf_set_lines is not allowed in
-    " MenuPopupChanged
+    " CompleteChanged
     if s:timer
         call timer_stop(s:timer)
         let s:timer = 0
