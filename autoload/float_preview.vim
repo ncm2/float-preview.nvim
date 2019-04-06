@@ -13,7 +13,7 @@ let s:loaded = 1
 " allow customized completion item resolve
 
 let s:timer = 0
-let s:win = 0
+let g:float_preview#win = 0
 let s:event = {}
 let s:item = {}
 
@@ -62,7 +62,7 @@ func! s:check(...)
         return
     endif
 
-    if s:win && s:event == s:last_event
+    if g:float_preview#win && s:event == s:last_event
         " let s:skip_cnt = get(s:, 'skip_cnt', 0) + 1
         " echom 'already opened, skip ' . s:skip_cnt
         return
@@ -151,11 +151,13 @@ func! s:check(...)
     " close the old one if already opened
     call float_preview#close()
 
-    let s:win = call('nvim_open_win', winargs)
-    call nvim_win_set_option(s:win, 'foldenable', v:false)
-    call nvim_win_set_option(s:win, 'wrap', v:true)
-    call nvim_win_set_option(s:win, 'statusline', '')
-    call nvim_win_set_option(s:win, 'winhl', g:float_preview#winhl)
+    let g:float_preview#win = call('nvim_open_win', winargs)
+    call nvim_win_set_option(g:float_preview#win, 'foldenable', v:false)
+    call nvim_win_set_option(g:float_preview#win, 'wrap', v:true)
+    call nvim_win_set_option(g:float_preview#win, 'statusline', '')
+    call nvim_win_set_option(g:float_preview#win, 'winhl', g:float_preview#winhl)
+
+    silent doautocmd <nomodeline> User FloatPreviewWinOpen
 endfunc
 
 func! s:auto_close()
@@ -171,12 +173,12 @@ func! float_preview#reopen()
 endfunc
 
 func! float_preview#close()
-    if s:win
-        let id = win_id2win(s:win)
+    if g:float_preview#win
+        let id = win_id2win(g:float_preview#win)
         if id > 0
             execute id . 'close!'
         endif
-        let s:win = 0
+        let g:float_preview#win = 0
         let s:last_winargs = []
     endif
 endfunc
