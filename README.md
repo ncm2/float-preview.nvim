@@ -24,6 +24,8 @@ your eye spot.
 
 ## Config && API
 
+### `g:float_preview#win`
+
 When the floating window opens, float-preview.nvim will emit a custom autocommand which you can use to further configure the opened window. The window ID will be exposed through `g:float_preview#win`.
 
 Example: a function that disables numbers and the cursor line in the opened window.
