@@ -156,6 +156,9 @@ func! s:check(...)
     call nvim_win_set_option(g:float_preview#win, 'wrap', v:true)
     call nvim_win_set_option(g:float_preview#win, 'statusline', '')
     call nvim_win_set_option(g:float_preview#win, 'winhl', g:float_preview#winhl)
+    call nvim_win_set_option(g:float_preview#win, 'number', v:false)
+    call nvim_win_set_option(g:float_preview#win, 'relativenumber', v:false)
+    call nvim_win_set_option(g:float_preview#win, 'cursorline', v:false)
 
     silent doautocmd <nomodeline> User FloatPreviewWinOpen
 endfunc
