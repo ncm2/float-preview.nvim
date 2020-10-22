@@ -93,7 +93,7 @@ func! s:check(...)
     endif
     let prevw_height = float_preview#display_height(info, prevw_width) + 1
 
-    let opt = { 'focusable': v:false,
+    let opt = { 'focusable': v:true,
                 \ 'width': prevw_width,
                 \ 'height': prevw_height
                 \}
@@ -121,6 +121,7 @@ func! s:check(...)
         let opt.col  = 0
     else
         let opt.relative = 'editor'
+        let opt.style = 'minimal'
 
         if s:event.scrollbar
             let right_avail_col  = s:event.col + s:event.width + 1
