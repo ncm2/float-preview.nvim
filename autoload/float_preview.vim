@@ -82,7 +82,11 @@ func! s:check(...)
         " unlisted-buffer & scratch-buffer (nobuflisted, buftype=nofile,
         " bufhidden=hide, noswapfile)
         let s:buf = nvim_create_buf(0, 1)
-        call nvim_buf_set_option(s:buf, 'syntax', 'OFF')
+        if has('nvim-0.5') == 1
+            call nvim_buf_set_option(s:buf, 'syntax', 'lsp_markdown')
+        else
+            call nvim_buf_set_option(s:buf, 'syntax', 'OFF')
+        endif
     endif
     call nvim_buf_set_lines(s:buf, 0, -1, 0, info)
 
